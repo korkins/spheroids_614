@@ -82,7 +82,7 @@ int main()
         fprintf(file, "Line 8\n");
         fprintf(file, "Line 9\n");
         fprintf(file, "Line 10\n");
-        fprintf(file, "CEXT=%.5e  CSCA=%.5e    W=%.5e  <COS>=%.5e\n", cext, cext*ssa, ssa, x1);
+        fprintf(file, "CEXT=%12.6e  CSCA=%12.6e    W=%12.6e  <COS>=%12.6e\n", cext, cext*ssa, ssa, x1);
 		fprintf(file, "\n");
 		fprintf(file, "      <        F11        F22        F33        F44        F12        F34\n");
 		for (isca = 0; isca < nsca_fix; isca++)
