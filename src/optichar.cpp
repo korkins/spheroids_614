@@ -68,8 +68,8 @@ REFS:
 		spxf, spxc, x0;
     double
 		*sizeparx_fix,
-		*extx_mie, *absx_mie, *extx_srd, *absx_srd, *extx, *absx, *sized,
-		*f11x, *f22x, *f33x, *f44x, *f12x, *f34x, *fsin, *fcos, *theta, *theta_fine, *lnf, *lnf_fine;
+		*extx, *absx, *sized, *f11x, *f22x, *f33x, *f44x, *f12x, *f34x,
+		*fsin, *fcos, *theta, *theta_fine, *lnf, *lnf_fine;
 //--------------------------------------------------------------------------------------------------
 //
 	code = -1;
@@ -78,19 +78,11 @@ REFS:
 	spxc = radc/wavel;
 //
 	sizeparx_fix = new double [nrgrid_fix];
-	extx_mie = new double [nrgrid_fix];
-	absx_mie = new double [nrgrid_fix];
-	extx_srd = new double [nrgrid_fix];
-	absx_srd = new double [nrgrid_fix];
 	extx = new double [nrgrid_fix];
 	absx = new double [nrgrid_fix];
 	sized = new double [nrgrid_fix];
 	for (ir = 0; ir < nrgrid_fix; ir++)
 	{
-		extx_mie[ir] = 0.0;
-		absx_mie[ir] = 0.0;
-		extx_srd[ir] = 0.0;
-		absx_srd[ir] = 0.0;
 		extx[ir] = 0.0;
 		absx[ir] = 0.0;
 		sized[ir] = 0.0;
@@ -251,10 +243,6 @@ REFS:
 	x1 = simpson(fcos, nsca_fine, dtheta) / 2.0;
 //
 	delete[] sizeparx_fix;
-	delete[] extx_mie;
-	delete[] absx_mie;
-	delete[] extx_srd;
-	delete[] absx_srd;
 	delete[] extx;
 	delete[] absx;
 	delete[] sized;
